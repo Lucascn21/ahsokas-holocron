@@ -24,7 +24,8 @@ export default function RootLayout({ children }) {
                 <ModeToggle />
                 <nav className="ml-auto text-sm font-medium space-x-6">
                   <Link href="/">Home</Link>
-                  <Link href="/about">About</Link>
+                  <Link href="/films">films</Link>
+                  <Link href="/characters">characters</Link>
                 </nav>
               </div>
             </header>
