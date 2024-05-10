@@ -1,8 +1,8 @@
 import Link from "next/link";
 import "./globals.css";
 import { Montserrat } from "next/font/google";
-import { ThemeProvider } from "../app/_components/theme-provider";
-import { ModeToggle } from "../app/_components/mode-toggle";
+import { ThemeProvider } from "./_components/theme-provider";
+import { ModeToggle } from "./_components/mode-toggle";
 
 const inter = Montserrat({ subsets: ["latin"] });
 
@@ -15,7 +15,7 @@ export default function RootLayout({ children }) {
   return (
     <html suppressHydrationWarning lang="en">
       <body
-        className={`antialiased min-h-screen bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-50 ${inter.className}`}
+        className={`antialiased min-h-screen bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-50 ${inter.className} break-words`}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <div className="mx-1 py-10 px-4">
