@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-export default function Section({ children }) {
+export function Section({ children }) {
   const [count, setCount] = useState(0);
 
   return (
