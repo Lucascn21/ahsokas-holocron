@@ -1,10 +1,10 @@
 import Link from "next/link";
 import "./globals.css";
-import { Inter } from "next/font/google";
-import { ThemeProvider } from "../components/theme-provider";
-import { ModeToggle } from "../components/mode-toggle";
+import { Montserrat } from "next/font/google";
+import { ThemeProvider } from "../app/_components/theme-provider";
+import { ModeToggle } from "../app/_components/mode-toggle";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Montserrat({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Create Next App",
@@ -18,15 +18,17 @@ export default function RootLayout({ children }) {
         className={`antialiased min-h-screen bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-50 ${inter.className}`}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <div className="max-w-2xl mx-1 py-10 px-4">
+          <div className="mx-1 py-10 px-4">
             <header>
               <div className="flex items-center justify-between">
-                <ModeToggle />
-                <nav className="ml-auto text-sm font-medium space-x-6">
-                  <Link href="/">Home</Link>
-                  <Link href="/films">films</Link>
-                  <Link href="/characters">characters</Link>
+                <Link href="/">
+                  <span className="icon-[fa6-solid--jedi] w-11 h-11"></span>
+                </Link>
+                <nav className=" font-medium space-x-6">
+                  <Link href="/holocron/films">films</Link>
+                  <Link href="/holocron/people">people</Link>
                 </nav>
+                <ModeToggle />
               </div>
             </header>
             <main>{children}</main>
