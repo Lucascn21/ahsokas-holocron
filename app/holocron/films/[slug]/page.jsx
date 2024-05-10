@@ -1,5 +1,5 @@
 "use server";
-import { Section } from "../../../_components/section";
+import { Section } from "../../../_components/Section";
 import { getData } from "../../../_lib/fetch";
 
 export default async function Page({ params }) {
