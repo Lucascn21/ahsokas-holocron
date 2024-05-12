@@ -1,21 +1,25 @@
 "use server";
-import { Section } from "../../_components/Section";
 import { getData } from "../../_lib/fetch";
-import { removeNaUnknownEmpty, replaceUrls } from "../../_lib/jsonUtils";
+import { filterResultsList, replaceUrls } from "../../_lib/jsonUtils";
+import dynamic from "next/dynamic";
 
 export default async function Page({ params }) {
   const { thing } = params;
   const results = await getData(`${process.env.REMOTE_API}/${thing}`);
-  const [nonEmptyResults] = removeNaUnknownEmpty(results);
+  const [nonEmptyResults] = filterResultsList(results);
   const redirectedResults = replaceUrls(
     nonEmptyResults.results,
     process.env.REMOTE_API,
     ""
   );
+  const LazySection = dynamic(() => import("../../_components/Section"), {
+    ssr: false,
+  });
 
   return (
     <>
-      <Section results={redirectedResults} />
+      <h1>Im lazily loading a section</h1>
+      <LazySection results={redirectedResults} />
     </>
   );
 }

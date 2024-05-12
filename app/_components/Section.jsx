@@ -3,7 +3,7 @@
 import Link from "next/link";
 
 //CSR
-export function Section({ results }) {
+export default function Section({ results }) {
   return (
     <section>
       {results?.map((result, index) => (

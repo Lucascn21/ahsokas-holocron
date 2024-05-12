@@ -1,10 +1,37 @@
-export const removeNaUnknownEmpty = (data) => {
+export const filterResultsList = (data) => {
   if (!Array.isArray(data)) data = [data];
 
   return data?.map((item) => {
     const newItem = { ...item };
 
-    Object.keys(newItem).forEach((key) => {
+    Object.keys(newItem).forEach((key, index) => {
+      const itemValue = newItem?.results[index];
+
+      if (
+        itemValue === "n/a" ||
+        itemValue === "unknown" ||
+        itemValue.length === 0
+      ) {
+        delete newItem.results[index];
+      }
+      Object.entries(itemValue).forEach(([key, value]) => {
+        if (value === "n/a" || value === "unknown" || value.length === 0) {
+          delete itemValue[key];
+        }
+      });
+    });
+
+    return newItem;
+  });
+};
+
+export const filterResult = (data) => {
+  if (!Array.isArray(data)) data = [data];
+
+  return data?.map((item) => {
+    const newItem = { ...item };
+
+    Object.keys(newItem).forEach((key, index) => {
       if (
         newItem[key] === "n/a" ||
         newItem[key] === "unknown" ||

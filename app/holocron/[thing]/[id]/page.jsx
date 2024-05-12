@@ -1,11 +1,11 @@
 "use server";
-import { removeNaUnknownEmpty, replaceUrls } from "../../../_lib/jsonUtils";
+import { filterResult, replaceUrls } from "../../../_lib/jsonUtils";
 import { getData } from "../../../_lib/fetch";
 
 export default async function Page({ params }) {
   const { thing, id } = params;
   const results = await getData(`${process.env.REMOTE_API}${thing}/${id}`);
-  const nonEmptyResults = removeNaUnknownEmpty(results);
+  const nonEmptyResults = filterResult(results);
   const redirectedResults = replaceUrls(
     nonEmptyResults,
     process.env.REMOTE_API,
