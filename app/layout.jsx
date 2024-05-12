@@ -1,8 +1,8 @@
 import Link from "next/link";
 import "./globals.css";
 import { Montserrat } from "next/font/google";
-import { ThemeProvider } from "./_components/theme-provider";
-import { ModeToggle } from "./_components/mode-toggle";
+import { ThemeProvider } from "./_components/Theme-provider";
+import { ModeToggle } from "./_components/Mode-toggle";
 
 const inter = Montserrat({ subsets: ["latin"] });
 
