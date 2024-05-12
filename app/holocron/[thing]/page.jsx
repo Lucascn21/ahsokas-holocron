@@ -6,12 +6,14 @@ import { removeNaUnknownEmpty, replaceUrls } from "../../_lib/jsonUtils";
 export default async function Page({ params }) {
   const { thing } = params;
   const results = await getData(`${process.env.REMOTE_API}/${thing}`);
-  const nonEmptyResults = removeNaUnknownEmpty(results);
+  const [nonEmptyResults] = removeNaUnknownEmpty(results);
+
   const redirectedResults = replaceUrls(
-    nonEmptyResults,
+    nonEmptyResults.results,
     process.env.REMOTE_API,
     process.env.HOST
   );
+
   return (
     <>
       <Section results={redirectedResults} />
