@@ -4,12 +4,12 @@ import { getData } from "../../../_lib/fetch";
 
 export default async function Page({ params }) {
   const { thing, id } = params;
-  const results = await getData(`https://swapi.dev/api/${thing}/${id}`);
+  const results = await getData(`${process.env.REMOTE_API}${thing}/${id}`);
   const nonEmptyResults = removeNaUnknownEmpty(results);
   const redirectedResults = replaceUrls(
     nonEmptyResults,
-    "https://swapi.dev/api",
-    "http://localhost:3000/holocron"
+    process.env.REMOTE_API,
+    process.env.HOST
   );
   const stringifiedResults = JSON.stringify(redirectedResults);
   return (

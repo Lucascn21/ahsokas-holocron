@@ -5,12 +5,12 @@ import { removeNaUnknownEmpty, replaceUrls } from "../../_lib/jsonUtils";
 
 export default async function Page({ params }) {
   const { thing } = params;
-  const { results } = await getData(`https://swapi.dev/api/${thing}`);
+  const results = await getData(`${process.env.REMOTE_API}${thing}`);
   const nonEmptyResults = removeNaUnknownEmpty(results);
   const redirectedResults = replaceUrls(
     nonEmptyResults,
-    "https://swapi.dev/api",
-    "http://localhost:3000/holocron"
+    process.env.REMOTE_API,
+    process.env.HOST
   );
   return (
     <>
