@@ -9,7 +9,7 @@ export default async function Page({ params }) {
   const redirectedResults = replaceUrls(
     nonEmptyResults,
     process.env.REMOTE_API,
-    process.env.HOST
+    ""
   );
   const stringifiedResults = JSON.stringify(redirectedResults);
   return (
