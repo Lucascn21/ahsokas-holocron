@@ -11,7 +11,7 @@ export default async function Page({ params }) {
   const redirectedResults = replaceUrls(
     nonEmptyResults.results,
     process.env.REMOTE_API,
-    process.env.HOST
+    process.env.NEXT_PUBLIC_VERCEL_URL || process.env.LOCALHOST
   );
 
   return (
