@@ -5,7 +5,7 @@ export default function Film({ data }) {
   return (
     <Link href={`./films/${episode_id}`}>
       <Image
-        src="/ahsokalofi.jpg"
+        src="/ahsoka_lofi.jpg"
         width={500}
         height={500}
         alt="Picture of the author"

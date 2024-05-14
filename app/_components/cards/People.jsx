@@ -4,9 +4,9 @@ export default function People({ data }) {
   const { name, gender, eye_color, url } = data;
 
   return (
-    <Link href={`./${url}`}>
+    <Link href={`./${url}?name=${name}`}>
       <Image
-        src="/ahsokalofi.jpg"
+        src="/ahsoka_lofi.jpg"
         width={500}
         height={500}
         alt="Picture of the author"

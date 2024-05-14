@@ -26,7 +26,7 @@ export default async function Page({ params, searchParams }) {
 
   return (
     <>
-      <h1>Im lazily loading a section</h1>
+      <h1>Lazily loaded section below</h1>
       {COUNT && PREVIOUS && (
         <Link href={`./${resource}/?${PREVIOUS ?? ""}&page=${PREVIOUS ?? ""}`}>
           <button>⬅</button>
