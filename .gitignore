@@ -38,3 +38,4 @@ next-env.d.ts
 *.pdf
 *.bak
 *.env
+app/_components/SectionOLD.jsx
