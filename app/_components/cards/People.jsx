@@ -12,7 +12,7 @@ export default function People({ data }) {
         alt="Picture of the author"
       />
       {name && <p>📄 {name}</p>}
-      {gender && <p>💃🕺 {gender}</p>}
+      {gender && <p>🦄 {gender}</p>}
       {eye_color && <p>👀 {eye_color}</p>}
     </Link>
   );

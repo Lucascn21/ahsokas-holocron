@@ -10,8 +10,8 @@ export default function Film({ data }) {
         height={500}
         alt="Picture of the author"
       />
-      {title} <br />
-      {episode_id}
+      {title && <p>🎞 {title}</p>}
+      {episode_id && <p>🔆Episode {episode_id}</p>}
     </Link>
   );
 }

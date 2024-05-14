@@ -31,7 +31,7 @@ export default function RootLayout({ children }) {
                 <ModeToggle />
               </div>
             </header>
-            <main>{children}</main>
+            <main className="text-center">{children}</main>
           </div>
         </ThemeProvider>
       </body>
