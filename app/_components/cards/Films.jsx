@@ -1,10 +1,9 @@
 import Image from "next/image";
-
+import Link from "next/link";
 export default function Film({ data }) {
   const { title, episode_id } = data;
-
   return (
-    <>
+    <Link href={`./films/${episode_id}`}>
       <Image
         src="/ahsokalofi.jpg"
         width={500}
@@ -13,6 +12,6 @@ export default function Film({ data }) {
       />
       {title} <br />
       {episode_id}
-    </>
+    </Link>
   );
 }

@@ -1,23 +1,23 @@
 "use client";
 import dynamic from "next/dynamic";
-import Link from "next/link";
 import { capitalizeFirstLetter } from "../_lib/stringUtils";
 
 //CSR
 export default function Section({ resource, results }) {
-  const FilmCard = dynamic(() =>
-    import(`../_components/${capitalizeFirstLetter(resource)}`)
+  const Card = dynamic(() =>
+    import(`../_components/cards/${capitalizeFirstLetter(resource)}`)
   );
+
   return (
     <>
-      <section>
+      <section className="grid md:grid-cols-3 grid-rows-1 gap-1">
         {results?.map((result, index) => (
           <article
             id={result.name || result.title}
             className="mb-5"
             key={index}
           >
-            <FilmCard data={result} />
+            <Card data={result} />
           </article>
         ))}
       </section>
