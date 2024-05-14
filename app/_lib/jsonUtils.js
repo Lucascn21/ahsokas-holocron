@@ -20,16 +20,14 @@ export const replaceUrls = (json, oldUrl, newUrl) => {
 
 export const removeEmptyValues = (json) => {
   const parsedJson = JSON.parse(JSON.stringify(json));
-
   const removeEmpty = (parsedJson) => {
     for (let key in parsedJson) {
+      if (parsedJson[key].length === 0) {
+        delete parsedJson[key];
+      }
       if (typeof parsedJson[key] === "object") {
         removeEmpty(parsedJson[key]);
-      } else if (
-        parsedJson[key] === "n/a" ||
-        parsedJson[key] === "" ||
-        (Array.isArray(parsedJson[key]) && parsedJson[key].length === 0)
-      ) {
+      } else if (parsedJson[key] === "n/a" || parsedJson[key] === "unknown") {
         delete parsedJson[key];
       }
     }
