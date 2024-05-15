@@ -7,6 +7,7 @@ export default function People({ processedResults }) {
   return (
     <section className="flex p-10 flex-col items-center">
       <Image
+        priority
         src="/ahsoka_cover.webp"
         width={500}
         height={500}
