@@ -12,6 +12,9 @@ export default function Loading() {
           width={500}
           height={500}
           alt="Loading..."
+          style={{
+            width: "auto",
+          }}
         />
       </article>
     </section>

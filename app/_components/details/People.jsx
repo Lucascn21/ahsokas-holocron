@@ -11,6 +11,9 @@ export default function People({ processedResults }) {
         width={500}
         height={500}
         alt="Picture of the author"
+        style={{
+          width: "auto",
+        }}
       />
       <p>📜{name}</p>
       <p>📏{height}</p>
