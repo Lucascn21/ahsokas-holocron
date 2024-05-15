@@ -4,7 +4,7 @@ export default function People({ data }) {
   const { name, gender, eye_color, url } = data;
 
   return (
-    <Link href={`./${url}?name=${name}`}>
+    <Link href={`./${url}?name=${name}`} aria-label={`Read more about ${name}`}>
       <Image
         src="/ahsoka_lofi.jpg"
         width={500}

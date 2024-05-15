@@ -25,6 +25,7 @@ export default function Films({ processedResults, getData }) {
                 <Link
                   className={"flex items-center flex-col"}
                   href={`/holocron/${characterURL}`}
+                  aria-label={`Read more about ${characterData.name}`}
                 >
                   <p>{characterData.name}</p>
                   <Image

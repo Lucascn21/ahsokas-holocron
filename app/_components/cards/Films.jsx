@@ -3,7 +3,10 @@ import Link from "next/link";
 export default function Film({ data }) {
   const { title, episode_id } = data;
   return (
-    <Link href={`./films/${episode_id}`}>
+    <Link
+      href={`./films/${episode_id}`}
+      aria-label={`Read more about ${title}`}
+    >
       <Image
         src="/ahsoka_lofi.jpg"
         width={500}

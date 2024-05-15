@@ -83,6 +83,7 @@ export default async function Page({ params, searchParams }) {
           </select>
         </section>
       )}
+
       <LazySection resource={resource} results={parsedResults} />
     </>
   );

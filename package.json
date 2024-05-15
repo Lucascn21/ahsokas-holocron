@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@iconify/json": "^2.2.208",
+    "@serwist/next": "^9.0.2",
     "@tailwindcss/typography": "^0.5.9",
     "@types/node": "18.16.1",
     "@types/react": "18.2.0",
@@ -27,6 +28,7 @@
     "@iconify/tailwind": "^1.0.1",
     "autoprefixer": "^10.4.19",
     "postcss": "^8.4.38",
+    "serwist": "^9.0.2",
     "tailwindcss": "^3.4.3"
   }
 }
