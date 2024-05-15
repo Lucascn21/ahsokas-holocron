@@ -7,10 +7,14 @@ export default function Films({ processedResults, getData }) {
     <>
       <section className="flex items-center flex-col">
         <Image
+          priority
           src="/ahsoka_wallpaper.jpg"
           width={100}
           height={100}
           alt="Picture of the author"
+          style={{
+            width: "auto",
+          }}
         />
         {processedResults.title && <h1>{processedResults.title}</h1>}
         {processedResults.episode_id && (
@@ -28,7 +32,10 @@ export default function Films({ processedResults, getData }) {
               `${process.env.REMOTE_API}/${characterURL}`
             );
             return (
-              <article className={"flex whitespace-nowrap"} key={characterData.id}>
+              <article
+                className={"flex whitespace-nowrap"}
+                key={characterData.id}
+              >
                 <Link
                   className={"flex items-center flex-col"}
                   href={`/holocron/${characterURL}`}
@@ -40,6 +47,9 @@ export default function Films({ processedResults, getData }) {
                     width={100}
                     height={100}
                     alt="Picture of the author"
+                    style={{
+                      width: "auto",
+                    }}
                   />
                 </Link>
               </article>
