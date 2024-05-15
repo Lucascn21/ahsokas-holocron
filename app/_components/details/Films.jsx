@@ -5,11 +5,18 @@ import Image from "next/image";
 export default function Films({ processedResults, getData }) {
   return (
     <>
-      <section>
+      <section className="flex items-center flex-col">
+        <Image
+          src="/ahsoka_wallpaper.jpg"
+          width={100}
+          height={100}
+          alt="Picture of the author"
+        />
         {processedResults.title && <h1>{processedResults.title}</h1>}
         {processedResults.episode_id && (
           <sub>Episode {processedResults.episode_id}</sub>
         )}
+        <br />
         {processedResults.director && (
           <p>Director: {processedResults.director}</p>
         )}
@@ -21,7 +28,7 @@ export default function Films({ processedResults, getData }) {
               `${process.env.REMOTE_API}/${characterURL}`
             );
             return (
-              <article className={"flex"} key={characterData.id}>
+              <article className={"flex whitespace-nowrap"} key={characterData.id}>
                 <Link
                   className={"flex items-center flex-col"}
                   href={`/holocron/${characterURL}`}
