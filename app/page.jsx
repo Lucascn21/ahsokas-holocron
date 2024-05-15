@@ -18,8 +18,7 @@ export default function Home() {
               target="_blank"
               rel="noreferrer"
             >
-              {" "}
-              Star Wars API{" "}
+               Star Wars API 
             </a>
             to fetch and display data about the Star Wars universe. It is built
             with Next.JS and Tailwind CSS.
