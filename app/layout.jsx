@@ -15,7 +15,7 @@ export default function RootLayout({ children }) {
   return (
     <html suppressHydrationWarning lang="en">
       <body
-        className={`antialiased min-h-screen bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-50 ${inter.className} break-words`}
+        className={`antialiased min-h-screen bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-50 ${inter.className} break-words text-lg`}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <div className="mx-1 py-10 px-4">
