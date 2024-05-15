@@ -2,7 +2,7 @@ export default function Home() {
   return (
     <main className="p-5">
       <section>
-        <h1>This is Ahsoka's Holocron</h1>
+        <h1>This is {"Ahsoka's"} Holocron</h1>
         <sub>
           A proof of concept and a learning journey in Next.JS with a Star Wars
           API
@@ -45,7 +45,7 @@ export default function Home() {
           <h2>Constraints👓</h2>
           <p>Style with Tailwind</p>
           <p>Develop with Next.Js</p>
-          <p>Only use Next's Apis</p>
+          <p>Only use {"Next's "} Apis</p>
           <p>Map the fetched data as the view is supposed to render</p>
         </article>
         <br />
