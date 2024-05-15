@@ -5,6 +5,7 @@ export default function Loading() {
       <article className="text-center">
         <h1 className="text-xl mb-4">Loading...</h1>
         <Image
+          unoptimized
           src="/babyyoda_load.gif"
           width={500}
           height={500}
