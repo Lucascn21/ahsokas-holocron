@@ -14,8 +14,6 @@ export default async function Page({ params }) {
     import(`../../../_components/details/${capitalizeFirstLetter(resource)}`)
   );
   return (
-    <Suspense fallback={<div>Loading...</div>}>
-      <Details processedResults={processedResults} getData={getData}></Details>
-    </Suspense>
+    <Details processedResults={processedResults} getData={getData}></Details>
   );
 }
