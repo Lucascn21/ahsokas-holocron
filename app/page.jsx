@@ -63,7 +63,7 @@ export default function Home() {
           <h2>Notes</h2>
           <p>
             I wasnt able to implement a solid filter function to the characters
-            page, although i managed to get it to work at one point, it felt
+            page, although I managed to get it to work at one point, it felt
             like a hacky solution.😿 <br />
             Therefore it will be a feature to implement in the next sprint as
             the team grows.😉
