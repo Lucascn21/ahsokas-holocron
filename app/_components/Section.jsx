@@ -13,7 +13,7 @@ export default function Section({ resource, results }) {
         {results?.map((result, index) => (
           <article
             id={result.name || result.title}
-            className="mb-5 w-fit"
+            className="mb-5 w-fit bg-clip-text "
             key={index}
           >
             <Card data={result} />

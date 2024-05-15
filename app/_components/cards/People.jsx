@@ -7,6 +7,9 @@ export default function People({ data }) {
     <Link href={`./${url}?name=${name}`} aria-label={`Read more about ${name}`}>
       <Image
         src="/ahsoka_lofi.jpg"
+        priority="true"
+        placeholder="blur"
+        blurDataURL="iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mMMYfhfDwAD1wHUhgo2bQAAAABJRU5ErkJggg=="
         width={500}
         height={500}
         alt="Picture of the author"

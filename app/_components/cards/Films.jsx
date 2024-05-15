@@ -9,6 +9,9 @@ export default function Film({ data }) {
     >
       <Image
         src="/ahsoka_lofi.jpg"
+        priority="true"
+        placeholder="blur"
+        blurDataURL="iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mMMYfhfDwAD1wHUhgo2bQAAAABJRU5ErkJggg=="
         width={500}
         height={500}
         alt="Picture of the author"

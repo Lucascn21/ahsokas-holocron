@@ -2,6 +2,7 @@
 import { processJson } from "../../../_lib/jsonUtils";
 import { capitalizeFirstLetter } from "../../../_lib/stringUtils";
 import { getData } from "../../../_lib/fetch";
+import { Suspense } from "react";
 import dynamic from "next/dynamic";
 
 export default async function Page({ params }) {
@@ -13,6 +14,8 @@ export default async function Page({ params }) {
     import(`../../../_components/details/${capitalizeFirstLetter(resource)}`)
   );
   return (
-    <Details processedResults={processedResults} getData={getData}></Details>
+    <Suspense fallback={<div>Loading...</div>}>
+      <Details processedResults={processedResults} getData={getData}></Details>
+    </Suspense>
   );
 }

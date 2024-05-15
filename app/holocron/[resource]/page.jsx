@@ -1,5 +1,6 @@
 "use server";
 
+import { Suspense } from "react";
 import { getData } from "../../_lib/fetch";
 import { processJson } from "../../_lib/jsonUtils";
 import { getPageParameter } from "../../_lib/stringUtils";
@@ -43,48 +44,67 @@ export default async function Page({ params, searchParams }) {
     ),
   ];
 
+  let links = null;
+  if (COUNT) {
+    links = (
+      <>
+        {PREVIOUS && (
+          <Link
+            href={`./${resource}/?${PREVIOUS ?? ""}&page=${PREVIOUS ?? ""}`}
+          >
+            <button className="px-4 py-2 bg-gray-800 text-white rounded-full shadow-md hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-400">
+              ⬅
+            </button>
+          </Link>
+        )}
+        {NEXT && (
+          <Link href={`./${resource}/?${NEXT ?? ""}&page=${NEXT ?? ""}`}>
+            <button className="px-4 py-2 bg-gray-800 text-white rounded-full shadow-md hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-400">
+              ➡
+            </button>
+          </Link>
+        )}
+      </>
+    );
+  }
+
   return (
     <>
       <h1>Lazily loaded section below</h1>
-      {COUNT && PREVIOUS && (
-        <Link href={`./${resource}/?${PREVIOUS ?? ""}&page=${PREVIOUS ?? ""}`}>
-          <button>⬅</button>
-        </Link>
-      )}
-      {COUNT && NEXT && (
-        <Link href={`./${resource}/?${NEXT ?? ""}&page=${NEXT ?? ""}`}>
-          <button>➡</button>
-        </Link>
-      )}
       {resource === "people" && (
-        <section>
-          <label htmlFor="gender">Gender:</label>
-          <select id="gender" onSelect={console.dir("a")}>
-            <option key={"All"} value={"*"}>
-              {"All"}
-            </option>
-            {filteredGenders.map((gender) => (
-              <option key={gender} value={gender}>
-                {gender}
+        <>
+          <section className="grid place-content-center grid-flow-col w-full text-nowrap gap-2">
+            <label htmlFor="gender">Gender:</label>
+            <select className={"h-fit"} id="gender">
+              <option key={"All"} value={"*"}>
+                {"All"}
               </option>
-            ))}
-          </select>
+              {filteredGenders.map((gender) => (
+                <option key={gender} value={gender}>
+                  {gender}
+                </option>
+              ))}
+            </select>
 
-          <label htmlFor="eyeColor">Eye Color:</label>
-          <select id="eyeColor">
-            <option key={"All"} value={"*"}>
-              {"All"}
-            </option>
-            {filteredEyeColors.map((eye_color) => (
-              <option key={eye_color} value={eye_color}>
-                {eye_color}
+            <label htmlFor="eyeColor">Eye Color:</label>
+            <select className={"h-fit"} id="eyeColor">
+              <option key={"All"} value={"*"}>
+                {"All"}
               </option>
-            ))}
-          </select>
-        </section>
+              {filteredEyeColors.map((eye_color) => (
+                <option key={eye_color} value={eye_color}>
+                  {eye_color}
+                </option>
+              ))}
+            </select>
+          </section>
+          <section className=""> {links}</section>
+        </>
       )}
 
-      <LazySection resource={resource} results={parsedResults} />
+      <Suspense fallback={<div>Loading...</div>}>
+        <LazySection resource={resource} results={parsedResults} />
+      </Suspense>
     </>
   );
 }

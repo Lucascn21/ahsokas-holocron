@@ -64,8 +64,18 @@ export default function RootLayout({ children }) {
                   <span className="icon-[fa6-solid--jedi] w-11 h-11"></span>
                 </Link>
                 <nav className=" font-medium space-x-6">
-                  <Link href="/holocron/films" aria-label={`Read more about star wars films`}>films</Link>
-                  <Link href="/holocron/people" aria-label={`Read more about star wars characters`}>people</Link>
+                  <Link
+                    href="/holocron/films"
+                    aria-label={`Read more about star wars films`}
+                  >
+                    films
+                  </Link>
+                  <Link
+                    href="/holocron/people"
+                    aria-label={`Read more about star wars characters`}
+                  >
+                    people
+                  </Link>
                 </nav>
                 <ModeToggle />
               </div>
