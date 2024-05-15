@@ -15,6 +15,9 @@ export default function Film({ data }) {
         width={500}
         height={500}
         alt="Picture of the author"
+        style={{
+          width: "auto",
+        }}
       />
       {title && <p>🎞 {title}</p>}
       {episode_id && <p>🔆Episode {episode_id}</p>}

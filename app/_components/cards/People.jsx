@@ -13,6 +13,9 @@ export default function People({ data }) {
         width={500}
         height={500}
         alt="Picture of the author"
+        style={{
+          width: "auto",
+        }}
       />
       {name && <p>📄 {name}</p>}
       {gender && <p>🦄 {gender}</p>}
